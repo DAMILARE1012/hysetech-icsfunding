@@ -1,0 +1,101 @@
+@extends('borrower.layout.app')
+@section('content')
+    <section class="content">
+        <div class="row" style="align-items: center">
+            <a href="{{route('borrower.applications')}}" style="color: black">
+                <i class="fas fa-arrow-left" style="font-size: larger"></i>
+            </a>
+            <div class="col-md-2 col-xs-3 tabbed  tab-active">
+                <a href="{{route('borrower.applications')}}" class="tab-title">Applications</a>
+            </div>
+            <div class="col-md-1 col-xs-3 tabbed">
+                <a href="{{route('borrower.applications.overview')}}" class="tab-title">Overview</a>
+            </div>
+        </div>
+
+        <hr class="mt-0">
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">All applications</h3>
+                        <div class="card-tools">
+                            @if($borrower->business)
+                                <a href="{{route('borrower.applications.create')}}" class="btn btn-success">Create
+                                    Application</a>
+                            @else
+                                <a href="{{route('borrower.company')}}" class="btn btn-success">Create
+                                    Application</a>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row p-0">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="background: lightblue">
+                                        <tr>
+                                            <td></td>
+                                            <th>UEN</th>
+                                            <td>Loan Category</td>
+                                            <td>Sent Date</td>
+                                            <td>Approved Date</td>
+                                            <td>Status</td>
+                                            <td colspan="4">Action</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @if($borrower->business && $borrower->business->applications->count())
+                                            @foreach($borrower->business->applications as $application)
+                                                <tr>
+                                                    <td>
+
+                                                    </td>
+                                                    <td>KP{{$application->id}}</td>
+                                                    <th style="color: #0c84ff">{{$application->activeLoan->loanType->title}}</th>
+                                                    <td>{{$application->created_at->format('d/m/Y')}}</td>
+                                                    <td>-</td>
+                                                    <td>
+                                                        <span
+                                                            class="badge badge-warning">{{$application->status}}</span>
+                                                    </td>
+                                                    <td colspan="4">
+                                                        <a href="{{route('borrower.applications.repayments',$application)}}"
+                                                           class="btn btn-default btn-sm">
+                                                            Repayments History
+                                                        </a>
+                                                        <a href="{{route('borrower.applications.details',$application)}}"
+                                                           class="btn btn-default btn-sm">
+                                                            View detail
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @else
+                                            <tr>
+                                                <td style="text-align: center" colspan="10">
+                                                    No applications added yet
+                                                </td>
+                                            </tr>
+                                        @endif
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+@endsection

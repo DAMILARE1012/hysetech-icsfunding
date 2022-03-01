@@ -1,0 +1,383 @@
+@extends('consultant.layout.app')
+@section('content')
+    <section class="content">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">All loan overview</h3>
+                <div class="card-tools">
+                    <a href="#" class="btn btn-success">
+                        Create new
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="border-right: none"><i class="fas fa-search"></i></span>
+                            </div>
+                            <input type="text" class="form-control" style="border-left: none" placeholder="Filter">
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <select name="industry" id="industry" class="form-control">
+                            <option value="">Industry</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <select name="loan_limit" id="loan_limit" class="form-control" >
+                            <option value="">Loan Limit</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <select name="type" id="type" class="form-control" >
+                            <option value="">Type</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <select name="status" id="status" class="form-control"
+                                >
+                            <option value="" style="text-align: center">Over Due</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1 mb-3">
+                        <button class="btn btn-default">
+                            <i class="fas fa-upload"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cbx" style="font-weight: normal;padding-right: 2rem">
+                            <input type="checkbox" id="cbx"> Showing 7 applications
+                        </label>
+
+                        <div class="btn-group mb-3">
+                            <button type="button" class="btn btn-default">More actions</button>
+                            <button type="button" class="btn btn-default dropdown-toggle dropdown-icon"
+                                    data-toggle="dropdown" aria-expanded="true">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu" role="menu" x-placement="bottom-start"
+                                 style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(68px, 38px, 0px);">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="border-right: none;font-weight: 100">Show: </span>
+                            </div>
+                            <select name="status" id="status" class="form-control" style="border-left: none">
+                                <option value="">This Week</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"
+                                      style="border-right: none;font-weight: 100">Sort By </span>
+                            </div>
+                            <select name="status" id="status" class="form-control" style="border-left: none">
+                                <option value="">Newest Update</option><option value="">Oldest Update</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row p-0 mt-3">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead style="background: lightblue">
+                                <tr>
+                                    <th></th>
+                                    <th>Company Name</th>
+                                    <td>ID No.</td>
+                                    <td>Country</td>
+                                    <td>Lending (SGD)</td>
+                                    <td>Collections (SGD)</td>
+                                    <td>Profit (SGD)</td>
+                                    <td colspan="4">Action</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('admin/dist/img/avatar.png')}}"
+                                             class="img-fluid rounded-circle border" style="width: 36px" alt="">
+                                        Company Name
+                                    </td>
+                                    <td>XX040XX</td>
+                                    <td>Singapore</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td colspan="4">
+                                        <a href="" class="btn btn-default btn-sm" title="Reminder">
+                                            <i class="fas fa-clock"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Email">
+                                            <i class="fas fa-envelope-open"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="SMS">
+                                            <i class="fas fa-sms"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Edit">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                        <a href="{{route('consultant.borrowers.collect-money.details')}}" class="btn btn-default btn-sm">
+                                            View detail
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('admin/dist/img/avatar.png')}}"
+                                             class="img-fluid rounded-circle border" style="width: 36px" alt="">
+                                        Company Name
+                                    </td>
+                                    <td>XX040XX</td>
+                                    <td>Singapore</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td colspan="4">
+                                        <a href="" class="btn btn-default btn-sm" title="Reminder">
+                                            <i class="fas fa-clock"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Email">
+                                            <i class="fas fa-envelope-open"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="SMS">
+                                            <i class="fas fa-sms"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Edit">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <a href="{{route('consultant.borrowers.collect-money.details')}}" class="btn btn-default btn-sm">
+                                            View detail
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('admin/dist/img/avatar.png')}}"
+                                             class="img-fluid rounded-circle border" style="width: 36px" alt="">
+                                        Company Name
+                                    </td>
+                                    <td>XX040XX</td>
+                                    <td>Singapore</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td colspan="4">
+                                        <a href="" class="btn btn-default btn-sm" title="Reminder">
+                                            <i class="fas fa-clock"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Email">
+                                            <i class="fas fa-envelope-open"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="SMS">
+                                            <i class="fas fa-sms"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Edit">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <a href="{{route('consultant.borrowers.collect-money.details')}}" class="btn btn-default btn-sm">
+                                            View detail
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('admin/dist/img/avatar.png')}}"
+                                             class="img-fluid rounded-circle border" style="width: 36px" alt="">
+                                        Company Name
+                                    </td>
+                                    <td>XX040XX</td>
+                                    <td>Singapore</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td colspan="4">
+                                        <a href="" class="btn btn-default btn-sm" title="Reminder">
+                                            <i class="fas fa-clock"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Email">
+                                            <i class="fas fa-envelope-open"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="SMS">
+                                            <i class="fas fa-sms"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Edit">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <a href="{{route('consultant.borrowers.collect-money.details')}}" class="btn btn-default btn-sm">
+                                            View detail
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('admin/dist/img/avatar.png')}}"
+                                             class="img-fluid rounded-circle border" style="width: 36px" alt="">
+                                        Company Name
+                                    </td>
+                                    <td>XX040XX</td>
+                                    <td>Singapore</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td colspan="4">
+                                        <a href="" class="btn btn-default btn-sm" title="Reminder">
+                                            <i class="fas fa-clock"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Email">
+                                            <i class="fas fa-envelope-open"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="SMS">
+                                            <i class="fas fa-sms"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Edit">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <a href="{{route('consultant.borrowers.collect-money.details')}}" class="btn btn-default btn-sm">
+                                            View detail
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('admin/dist/img/avatar.png')}}"
+                                             class="img-fluid rounded-circle border" style="width: 36px" alt="">
+                                        Company Name
+                                    </td>
+                                    <td>XX040XX</td>
+                                    <td>Singapore</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td colspan="4">
+                                        <a href="" class="btn btn-default btn-sm" title="Reminder">
+                                            <i class="fas fa-clock"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Email">
+                                            <i class="fas fa-envelope-open"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="SMS">
+                                            <i class="fas fa-sms"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Edit">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <a href="{{route('consultant.borrowers.collect-money.details')}}" class="btn btn-default btn-sm">
+                                            View detail
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('admin/dist/img/avatar.png')}}"
+                                             class="img-fluid rounded-circle border" style="width: 36px" alt="">
+                                        Company Name
+                                    </td>
+                                    <td>XX040XX</td>
+                                    <td>Singapore</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td colspan="4">
+                                        <a href="" class="btn btn-default btn-sm" title="Reminder">
+                                            <i class="fas fa-clock"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Email">
+                                            <i class="fas fa-envelope-open"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="SMS">
+                                            <i class="fas fa-sms"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Edit">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="" class="btn btn-default btn-sm" title="Delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <a href="{{route('consultant.borrowers.collect-money.details')}}" class="btn btn-default btn-sm">
+                                            View detail
+                                        </a>
+
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+
+            </div>
+        </div>
+    </section>
+@endsection

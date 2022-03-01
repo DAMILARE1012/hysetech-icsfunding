@@ -1,0 +1,2802 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+:root {
+    --yellow-color: #fcd434;
+    --yellow-hover: #ffcc2b;
+}
+
+@-webkit-keyframes animate-loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: "Roboto", sans-serif;
+    color: #444444;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--yellow-color);
+}
+
+a:hover {
+    color: var(--yellow-hover);
+    text-decoration: none;
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+}
+
+h2 {
+    font-family: "Roboto", sans-serif;
+}
+
+h3 {
+    font-family: "Roboto", sans-serif;
+}
+
+h4 {
+    font-family: "Roboto", sans-serif;
+}
+
+h5 {
+    font-family: "Roboto", sans-serif;
+}
+
+h6 {
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#main {
+    -webkit-transition: margin-left 0.5s;
+    transition: margin-left 0.5s;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+}
+
+.back-to-top i {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background: var(--yellow-color);
+    color: #fff;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.back-to-top i:hover {
+    background: var(--yellow-hover);
+    color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    background: rgba(55, 64, 85, 0.9);
+    background: #001733;
+}
+
+#header .logo {
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-family: "Poppins", sans-serif;
+}
+
+#header .logo a {
+    color: #fff;
+}
+
+#header .logo img {
+    max-height: 60px;
+}
+
+#header.header-transparent {
+    background: transparent;
+    background: #001733;
+}
+
+#header.header-scrolled {
+    padding: 10px 0;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.nav-menu > ul > li {
+    position: relative;
+    white-space: nowrap;
+    padding: 10px 0 10px 28px;
+}
+
+.nav-menu a {
+    display: block;
+    position: relative;
+    color: #ccd0da;
+    font-weight: 700;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
+.nav-menu a:hover {
+    color: var(--yellow-color);
+}
+
+.nav-menu .active > a {
+    color: var(--yellow-color);
+}
+
+.nav-menu li:hover > a {
+    color: var(--yellow-color);
+}
+
+.nav-menu .drop-down ul {
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: calc(100% + 30px);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px 0;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.nav-menu .drop-down ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: 600;
+    text-transform: none;
+    color: #414c64;
+    color: #444;
+}
+
+.nav-menu .drop-down ul a:hover {
+    color: var(--yellow-color);
+}
+
+.nav-menu .drop-down ul .active > a {
+    color: var(--yellow-color);
+}
+
+.nav-menu .drop-down ul li:hover > a {
+    color: var(--yellow-color);
+}
+
+.nav-menu .drop-down:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+}
+
+.nav-menu .drop-down li {
+    min-width: 180px;
+    position: relative;
+    border-bottom: 2px solid #000;
+}
+
+.nav-menu .drop-down li:last-child {
+    border-bottom: none;
+}
+
+.nav-menu .drop-down > a:after {
+    content: "\ea99";
+    /*font-family: IcoFont;*/
+    padding-left: 5px;
+}
+
+.nav-menu .drop-down .drop-down ul {
+    top: 0;
+    left: calc(100% - 30px);
+}
+
+.nav-menu .drop-down .drop-down:hover > ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+}
+
+.nav-menu .drop-down .drop-down > a {
+    padding-right: 35px;
+}
+
+.nav-menu .drop-down .drop-down > a:after {
+    content: "\eaa0";
+    /*font-family: IcoFont;*/
+    position: absolute;
+    right: 15px;
+}
+
+.mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: calc(40px - 14px);
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+}
+
+.mobile-nav-toggle i {
+    color: #fff;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    z-index: 9999;
+    overflow-y: auto;
+    background: #fff;
+    -webkit-transition: ease-in-out 0.2s;
+    transition: ease-in-out 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.mobile-nav * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mobile-nav a {
+    display: block;
+    position: relative;
+    color: #414c64;
+    padding: 10px 20px;
+    font-weight: 500;
+    outline: none;
+}
+
+.mobile-nav a:hover {
+    color: var(--yellow-color);
+    text-decoration: none;
+}
+
+.mobile-nav .active > a {
+    color: var(--yellow-color);
+    text-decoration: none;
+}
+
+.mobile-nav li:hover > a {
+    color: var(--yellow-color);
+    text-decoration: none;
+}
+
+.mobile-nav .drop-down > a {
+    padding-right: 35px;
+}
+
+.mobile-nav .drop-down > a:after {
+    content: "\ea99";
+    /*font-family: IcoFont;*/
+    padding-left: 10px;
+    position: absolute;
+    right: 15px;
+}
+
+.mobile-nav .drop-down ul {
+    display: none;
+    overflow: hidden;
+}
+
+.mobile-nav .drop-down li {
+    padding-left: 20px;
+}
+
+.mobile-nav .active.drop-down > a:after {
+    /*content: "\eaa1";*/
+}
+
+.mobile-nav-overly {
+    width: 100%;
+    height: 100%;
+    z-index: 9997;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(45, 53, 69, 0.6);
+    overflow: hidden;
+    display: none;
+    -webkit-transition: ease-in-out 0.2s;
+    transition: ease-in-out 0.2s;
+}
+
+.mobile-nav-active {
+    overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+    color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero,
+#login-hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/banner.jpg") top center;
+    background-size: cover;
+    position: relative;
+}
+
+#hero:before,
+#login-hero:before {
+    content: "";
+    background: rgba(4, 29, 88, 0.75);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#hero .container,
+#login-hero .container {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#hero h1,
+#login-hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+    color: var(--yellow-color);
+}
+
+#hero h2,
+#login-hero h2 {
+    margin: 20px auto 0 auto;
+    font-size: 22px;
+    color: #ccd0da;
+    font-weight: 400;
+    max-width: 800px;
+    text-align: center;
+    width: 100%;
+}
+
+#hero .btn-get-started,
+#login-hero .btn-get-started {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 9px 35px;
+    border-radius: 10px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    margin-top: 40px;
+    border: 2px solid var(--yellow-color);
+    color: #fff;
+}
+
+#hero .btn-get-started:hover,
+#login-hero .btn-get-started:hover {
+    background: var(--yellow-hover);
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+    padding: 60px 0;
+}
+
+.section-bg {
+    background-color: #f7f8fa;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.section-title h2,
+.section-title a {
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: capitalize;
+    position: relative;
+    text-align: left;
+    color: #001733;
+}
+
+.section-title a {
+    color: #444;
+    font-size: 24px;
+    font-weight: 400;
+    color: #334560;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--yellow-color);
+    background-color: #ccd0da;
+    top: 70%;
+    left: 0;
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+    text-align: center;
+    padding: 30px 20px;
+    -webkit-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+    background: #f2f3f5;
+    -webkit-box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+    box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+}
+
+.services .icon-box .icon {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
+    position: relative;
+    background-color: var(--yellow-color);
+    border-radius: 50%;
+    padding: 20px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100px);
+    flex: 0 0 calc(100px);
+}
+
+.services .icon-box .icon img {
+    width: 90%;
+    max-width: 90%;
+    width: 100%;
+}
+
+.services .icon-box h4 {
+    font-weight: 600;
+    margin: 10px 0 8px 0;
+    font-size: 22px;
+    text-align: left;
+}
+
+.services .icon-box h4 a {
+    color: #001733;
+    font-weight: 700;
+    -webkit-transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
+}
+
+@media (max-width: 500px) {
+    .services .icon-box h4 {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+.services .icon-box p {
+    line-height: 24px;
+    font-size: 18px;
+    margin-bottom: 0;
+    text-align: left;
+    margin-top: 0px;
+    color: #66738b;
+    font-weight: 400;
+}
+
+@media (max-width: 500px) {
+    .services .icon-box p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.services .icon-box:hover {
+    border-color: #fff;
+    -webkit-box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+
+/*--------------------------------------------------------------
+# Loan Calculator
+--------------------------------------------------------------*/
+.loan .loan-calculator {
+    background-color: rgba(204, 208, 218, 0.25);
+    height: 100%;
+    padding: 50px;
+}
+
+.loan .loan-calculator .section-title h2 {
+    color: #001733;
+}
+
+.loan .loan-calculator .section-title::after {
+    background-color: #001733;
+}
+
+.loan .loan-calculator p {
+    font-size: 25px;
+    line-height: 32px;
+    color: #001733;
+}
+
+.loan .loan-calculator .disclaimer p {
+    font-size: 14px;
+    line-height: 16px;
+    /* or 114% */
+    color: #66738b;
+}
+
+.loan .loan-calculator .disclaimer h6 {
+    font-size: 14px;
+    line-height: 11px;
+    /* identical to box height, or 79% */
+    letter-spacing: 0.291667px;
+    color: #001733;
+    font-weight: 500;
+}
+
+.loan .loan-calculator .disclaimer h6.more {
+    text-align: right;
+}
+
+.loan .loan-calculator form {
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+}
+
+.loan .loan-calculator form .form-control {
+    background: #f7f7f7;
+    border-radius: 3px;
+    border: none;
+    padding-left: 1.5rem;
+    height: 50px;
+}
+
+.loan .loan-calculator form .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.loan .loan-calculator form .form-control::-webkit-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+.loan .loan-calculator form .form-control:-ms-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+.loan .loan-calculator form .form-control::-ms-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+.loan .loan-calculator form .form-control::placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+.loan .loan-calculator form .form-group label p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 11px;
+    letter-spacing: 0.291667px;
+    color: #001733;
+    margin: 0;
+}
+
+.loan .loan-calculator form .form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f7f7f7;
+    background-image: url(../img/down.svg);
+    background-repeat: no-repeat;
+    background-position-x: 96%;
+    background-position-y: 20px;
+    border-radius: 3px;
+    border: none;
+    padding-right: 1.5rem;
+}
+
+.loan .loan-calculator form .form-btns .btn {
+    border: 1px solid #001733;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    max-width: 120px;
+    width: 100%;
+    height: 40px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.loan .loan-calculator form .form-btns .btn.reset {
+    background-color: transparent;
+    color: #001733;
+}
+
+.loan .loan-calculator form .form-btns .btn.reset:hover {
+    background-color: #001733;
+    color: #fff;
+}
+
+.loan .loan-calculator form .form-btns .btn.calculate {
+    background-color: #001733;
+    color: #fff;
+}
+
+.loan .loan-calculator form .form-btns .btn.calculate:hover {
+    background-color: transparent;
+    color: #001733;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer .footer-box {
+    padding: 40px 40px 20px 40px;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #f2f3f5;
+}
+
+footer .footer-box.box-2 {
+    background-color: #fff;
+}
+
+footer .footer-box.box-2 .logo {
+    margin-bottom: 40px;
+}
+
+footer .footer-box.box-2 .rights {
+    margin-top: 30px;
+}
+
+footer .footer-box.box-2 .rights p {
+    font-size: 14px;
+}
+
+footer .footer-box.box-2 .rights .policy {
+    color: #888;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer .footer-box h3 {
+    font-size: 26px;
+    color: #001733;
+    font-weight: 700;
+}
+
+footer .footer-box h6 {
+    color: #aaa;
+    margin: 30px 0;
+    font-size: 18px;
+    font-weight: normal;
+    font-weight: 500;
+}
+
+footer .footer-box .email-number {
+    position: relative;
+    padding: 30px 0;
+    margin-bottom: 30px;
+}
+
+footer .footer-box .email-number p {
+    margin: 0;
+    color: #aaa;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+footer .footer-box .email-number .email {
+    color: #888;
+}
+
+footer .footer-box .email-number::after, footer .footer-box .email-number::before {
+    position: absolute;
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #18d26e;
+    left: calc(50% - 30%);
+    -webkit-transform: translateX(30%);
+    transform: translateX(30%);
+}
+
+footer .footer-box .email-number::after {
+    bottom: 0;
+}
+
+footer .footer-box .email-number::before {
+    top: 0;
+}
+
+footer .footer-box p {
+    margin: 0;
+    color: #aaa;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 28px;
+}
+
+footer .footer-box.box-3 .funding {
+    margin-top: 60px;
+    position: relative;
+    padding: 40px 0;
+}
+
+footer .footer-box.box-3 .funding::before {
+    position: absolute;
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #18d26e;
+    left: calc(50% - 30%);
+    -webkit-transform: translateX(30%);
+    transform: translateX(30%);
+}
+
+footer .footer-box.box-3 .funding::before {
+    top: 0;
+}
+
+/*--------------------------------------------------------------
+# Login Page
+--------------------------------------------------------------*/
+#login-hero {
+    padding: 0;
+    background-position: left bottom;
+}
+
+#login-hero > div {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    background-color: #fff;
+    height: 100%;
+}
+
+#login-hero > div form {
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+#login-hero > div form h3 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+#login-hero > div form .form-control {
+    background: #f7f7f7;
+    border-radius: 3px;
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-left: 1.5rem;
+    height: 50px;
+}
+
+#login-hero > div form .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#login-hero > div form .form-control::-webkit-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#login-hero > div form .form-control:-ms-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#login-hero > div form .form-control::-ms-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#login-hero > div form .form-control::placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#login-hero > div form .form-group .text-muted {
+    text-align: right;
+    display: inherit;
+    margin-top: 2px;
+    text-align: right;
+    letter-spacing: 0.333333px;
+    color: #334560 !important;
+    cursor: pointer;
+}
+
+#login-hero > div form .form-group label {
+    color: #334560;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#login-hero > div form .form-group .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #001733;
+    border-color: #001733;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #334560;
+}
+
+#login-hero > div form .form-group .custom-control-input:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#login-hero > div form .form-group .input-group-text {
+    background: #f7f7f7;
+    border-radius: 3px;
+    border: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 50px;
+}
+
+#login-hero > div form .submit-btn {
+    background-color: #18d26e;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    color: #fff;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 50px;
+    font-size: 18px;
+    line-height: 15px;
+    color: #ffffff;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+
+#login-hero > div form .submit-btn:hover {
+    background-color: transparent;
+    color: #18d26e;
+    border: 1px solid #18d26e;
+}
+
+#login-hero > div form .or .border {
+    max-width: calc(50% - 8px);
+    width: 100%;
+    background-color: #979797;
+    height: 1px;
+    margin: 0 3px;
+}
+
+#login-hero > div form .or span {
+    color: #aab2bd;
+    display: inline-block;
+    margin: 0 3px;
+}
+
+#login-hero > div form .google-sing-login .btn {
+    height: 60px;
+    border: 1px solid #e2e2e0;
+}
+
+#login-hero > div form p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 40px;
+    color: #656d78;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#login-hero > div form p a {
+    color: #18d26e !important;
+    text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+# Fixed Bottom Navbar
+--------------------------------------------------------------*/
+.fixed-bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    background: #055fc6;
+    background: #001733;
+    -webkit-box-shadow: 0px 0px 4px #055fc6;
+    box-shadow: 0px 0px 4px #055fc6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.fixed-bottom ul {
+    width: 100%;
+    height: 100%;
+}
+
+.fixed-bottom ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+}
+
+.fixed-bottom ul li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.fixed-bottom ul li a .text {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.208333px;
+    color: #72a6bd;
+}
+
+.fixed-bottom ul li a .icon {
+    text-align: center;
+    letter-spacing: 0.208333px;
+    color: #cce7f3;
+}
+
+.fixed-bottom ul li a .icon svg path {
+    stroke: #72a6bd;
+    stroke-width: 1px;
+}
+
+.fixed-bottom ul li a.active .text {
+    color: #fff;
+}
+
+.fixed-bottom ul li a.active .icon svg path {
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+#main.active {
+    position: relative;
+    left: 260px;
+    width: calc(100% - 260px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#main.menu-close {
+    left: 0px;
+    width: calc(100% - 0px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#main #header {
+    height: 80px;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+#main #header .menu-icon {
+    cursor: pointer;
+    color: #fff;
+}
+
+#main #header > div {
+    height: 100%;
+}
+
+#main #header nav .profile {
+    margin-left: 14px;
+    margin-right: 20px;
+}
+
+#main #header nav .profile .user-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+#main #header nav .profile span {
+    display: inline-block;
+    margin-left: 11px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #222d32;
+}
+
+#main #header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#main #header nav > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 20px;
+}
+
+#main #header nav > ul > li {
+    position: relative;
+    white-space: nowrap;
+    padding: 10px 0 10px 10px;
+    cursor: pointer;
+}
+
+#main #header nav a {
+    display: block;
+    position: relative;
+    color: #ccd0da;
+    font-weight: 700;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
+#main #header nav a:hover {
+    color: var(--yellow-color);
+}
+
+#main #header nav .active > a {
+    color: var(--yellow-color);
+}
+
+#main #header nav li:hover > a {
+    color: var(--yellow-color);
+}
+
+#main #header nav .drop-down ul {
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 100%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    padding: 0px;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+#main #header nav .drop-down ul a {
+    padding: 15px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: 600;
+    text-transform: none;
+    color: #414c64;
+    color: #444;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#main #header nav .drop-down ul a:hover {
+    color: var(--yellow-color);
+}
+
+#main #header nav .drop-down ul .active > a {
+    color: var(--yellow-color);
+}
+
+#main #header nav .drop-down ul li:hover {
+    background-color: #d6d7da;
+    background: #001733;
+    border-top-left-radius: 5;
+    border-top-right-radius: 5;
+}
+
+#main #header nav .drop-down ul li:hover > a {
+    color: var(--yellow-color);
+    color: #fff;
+}
+
+#main #header nav .drop-down ul li:hover:last-child {
+    border-bottom-left-radius: 5;
+    border-bottom-right-radius: 5;
+}
+
+#main #header nav .drop-down.active > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+#main #header nav .drop-down li {
+    min-width: 150px;
+    position: relative;
+    border-bottom: 1px solid #000;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#main #header nav .drop-down li:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 5;
+    border-bottom-right-radius: 5;
+}
+
+#main .nav-pills {
+    position: relative;
+}
+
+#main .nav-pills::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #d6d7da;
+}
+
+#main .nav-pills .nav-link {
+    border-radius: 0px;
+    padding: 1rem;
+    color: #222d32;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+#main .nav-pills .nav-link.active,
+#main .nav-pills .show > .nav-link {
+    background-color: transparent;
+    border-bottom: 5px #055fc6 solid;
+}
+
+#main #pills-companies .profile-alert {
+    max-width: 445px;
+    width: 100%;
+    height: 35px;
+    background: rgba(101, 166, 233, 0.3);
+    border: 1px solid #65a6e9;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 5px 14px;
+}
+
+#main #pills-companies .profile-alert p {
+    margin: 0;
+    margin-left: 10px;
+    margin-top: 2px;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height, or 100% */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    letter-spacing: 0.333333px;
+    color: #222830;
+}
+
+@media (max-width: 900px) {
+    #main #pills-companies .profile-alert {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+#main #pills-companies .action-btns a {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    margin: 0 3px;
+    border: 1px solid #8c9196;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+    #main #pills-companies .action-btns {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+#main #pills-companies .company-inner {
+    border: 0.5px solid #939393;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#main #pills-companies .company-inner .company-details {
+    background: #036fdf;
+    border-radius: 4px;
+    height: 40px;
+    padding-left: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #ffffff;
+}
+
+#main #pills-companies .company-inner p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .company-inner .company-inner-content .alert {
+    height: 40px;
+    max-width: 400px;
+    background: #fff4f4;
+    border: 1px solid #e0b3b2;
+    border-radius: 4px;
+}
+
+#main #pills-companies .company-inner .company-inner-content .alert.alert-danger {
+    background: #fff4f4;
+    border: 1px solid #e0b3b2;
+}
+
+#main #pills-companies .company-inner .company-inner-content .row h5 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: #000000;
+}
+
+#main #pills-companies .company-inner .company-inner-content .row p {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: #000000;
+}
+
+#main #pills-companies .profile-inner {
+    border: 0.5px solid #939393;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#main #pills-companies .profile-inner p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content {
+    max-width: 740px;
+    margin: 10px auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content .info-icon span {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 11px;
+    /* identical to box height, or 79% */
+    letter-spacing: 0.291667px;
+    color: #055fc6;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content .singpass-info {
+    background: rgba(5, 95, 198, 0.15);
+    border: 1px solid #055fc6;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content .singpass-info h6 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.291667px;
+    color: #001e41;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content .singpass-info p {
+    max-width: 324px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #001e41;
+    margin: 1rem auto;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content .singpass-info .btn {
+    max-width: 220px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #fff;
+    height: 60px;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content .or .border {
+    max-width: calc(50% - 8px);
+    width: 100%;
+    background-color: #979797;
+    height: 1px;
+    margin: 0 3px;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content .or span {
+    color: #aab2bd;
+    display: inline-block;
+    margin: 0 3px;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .form-control {
+    background: #f7f7f7;
+    border-radius: 3px;
+    border: none;
+    padding-left: 1.5rem;
+    height: 50px;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .form-control::-webkit-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .form-control:-ms-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .form-control::-ms-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .form-control::placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f7f7f7;
+    background-image: url(../img/down.svg);
+    background-repeat: no-repeat;
+    background-position-x: 96%;
+    background-position-y: 20px;
+    border-radius: 3px;
+    border: none;
+    padding-right: 1.5rem;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form input[type="file"] {
+    display: none;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .custom-file-upload {
+    border: 1px dashed #99a2b4;
+    border-radius: 3px;
+    width: 100%;
+    height: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form label {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 11px;
+    /* identical to box height, or 79% */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    letter-spacing: 0.291667px;
+    color: #001f42;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .btn {
+    max-width: 172px;
+    width: 100%;
+    height: 50px;
+    margin: 0 5px;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .btn.save-btn {
+    border: 1px solid #055fc6;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #055fc6;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #055fc6;
+}
+
+#main #pills-companies .profile-inner .profile-inner-content form .btn.submit-btn {
+    border: 1px solid #36b45d;
+    background: #36b45d;
+    border-radius: 3px;
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 15px;
+    text-align: center;
+}
+
+#main #pills-companies .tracking-inner {
+    border: 0.5px solid #939393;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#main #pills-companies .tracking-inner p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .tracking-inner .tracking-inner-content .row h6 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    margin: 0;
+}
+
+#main #pills-companies .tracking-inner .tracking-inner-content .row p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    margin: 0;
+}
+
+#main #pills-companies .tracking-inner .tracking-inner-content .row:nth-of-type(even) {
+    background: rgba(236, 240, 244, 0.4);
+}
+
+#main #pills-companies .notification-inner {
+    border: 0.5px solid #939393;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#main #pills-companies .notification-inner p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .notification-inner .notification-inner-content .single-notification {
+    background: #ffffff;
+    mix-blend-mode: normal;
+    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+#main #pills-companies .notification-inner .notification-inner-content .single-notification .single-header span {
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    /* identical to box height */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #66738b;
+    margin: 0 5px;
+}
+
+#main #pills-companies .notification-inner .notification-inner-content .single-notification h3 {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 11px;
+    letter-spacing: 0.291667px;
+    color: #055fc6;
+    margin: 12px 3px;
+}
+
+#main #pills-companies .notification-inner .notification-inner-content .single-notification p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #212121;
+}
+
+#main #pills-companies .account-inner {
+    border: 0.5px solid #939393;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#main #pills-companies .account-inner .profile .profile-img {
+    width: 120px;
+    height: 120px;
+}
+
+#main #pills-companies .account-inner .account-form .form-control {
+    background: #f7f7f7;
+    border-radius: 3px;
+    border: none;
+    padding-left: 1.5rem;
+    height: 36px;
+}
+
+#main #pills-companies .account-inner .account-form .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#main #pills-companies .account-inner .account-form .form-control::-webkit-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#main #pills-companies .account-inner .account-form .form-control:-ms-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#main #pills-companies .account-inner .account-form .form-control::-ms-input-placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#main #pills-companies .account-inner .account-form .form-control::placeholder {
+    letter-spacing: 0.4px;
+    color: #b0b0c3;
+}
+
+#main #pills-companies .account-inner .account-form textarea {
+    height: 75px !important;
+}
+
+#main #pills-companies .account-inner .account-form label {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 11px;
+    letter-spacing: 0.291667px;
+    color: #000000;
+}
+
+#main #pills-companies .account-inner .account-form .btn {
+    max-width: 120px;
+    width: 100%;
+    height: 36px;
+    margin: 0 5px;
+}
+
+#main #pills-companies .account-inner .account-form .btn.cancel-btn {
+    background: #ffffff;
+    border: 0.5px solid #4e4e4e;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #4e4e4e;
+    margin-left: 0px;
+}
+
+#main #pills-companies .account-inner .account-form .btn.save-btn {
+    border: 1px solid #36b45d;
+    background: #36b45d;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#main #pills-companies .users-inner,
+#main #pills-companies .paymentHistory-inner,
+#main #pills-companies .members-inner {
+    border: 0.5px solid #939393;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#main #pills-companies .users-inner p,
+#main #pills-companies .paymentHistory-inner p,
+#main #pills-companies .members-inner p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .users-inner .users-inner-content table td,
+#main #pills-companies .users-inner .users-inner-content table th,
+#main #pills-companies .users-inner .paymentHistory-inner-content table td,
+#main #pills-companies .users-inner .paymentHistory-inner-content table th,
+#main #pills-companies .users-inner .members-inner-content table td,
+#main #pills-companies .users-inner .members-inner-content table th,
+#main #pills-companies .paymentHistory-inner .users-inner-content table td,
+#main #pills-companies .paymentHistory-inner .users-inner-content table th,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table td,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table th,
+#main #pills-companies .paymentHistory-inner .members-inner-content table td,
+#main #pills-companies .paymentHistory-inner .members-inner-content table th,
+#main #pills-companies .members-inner .users-inner-content table td,
+#main #pills-companies .members-inner .users-inner-content table th,
+#main #pills-companies .members-inner .paymentHistory-inner-content table td,
+#main #pills-companies .members-inner .paymentHistory-inner-content table th,
+#main #pills-companies .members-inner .members-inner-content table td,
+#main #pills-companies .members-inner .members-inner-content table th {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#main #pills-companies .users-inner .users-inner-content table thead,
+#main #pills-companies .users-inner .paymentHistory-inner-content table thead,
+#main #pills-companies .users-inner .members-inner-content table thead,
+#main #pills-companies .paymentHistory-inner .users-inner-content table thead,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table thead,
+#main #pills-companies .paymentHistory-inner .members-inner-content table thead,
+#main #pills-companies .members-inner .users-inner-content table thead,
+#main #pills-companies .members-inner .paymentHistory-inner-content table thead,
+#main #pills-companies .members-inner .members-inner-content table thead {
+    background: #ccd0da;
+}
+
+#main #pills-companies .users-inner .users-inner-content table thead th,
+#main #pills-companies .users-inner .paymentHistory-inner-content table thead th,
+#main #pills-companies .users-inner .members-inner-content table thead th,
+#main #pills-companies .paymentHistory-inner .users-inner-content table thead th,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table thead th,
+#main #pills-companies .paymentHistory-inner .members-inner-content table thead th,
+#main #pills-companies .members-inner .users-inner-content table thead th,
+#main #pills-companies .members-inner .paymentHistory-inner-content table thead th,
+#main #pills-companies .members-inner .members-inner-content table thead th {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .users-inner .users-inner-content table tbody td nav a,
+#main #pills-companies .users-inner .paymentHistory-inner-content table tbody td nav a,
+#main #pills-companies .users-inner .members-inner-content table tbody td nav a,
+#main #pills-companies .paymentHistory-inner .users-inner-content table tbody td nav a,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table tbody td nav a,
+#main #pills-companies .paymentHistory-inner .members-inner-content table tbody td nav a,
+#main #pills-companies .members-inner .users-inner-content table tbody td nav a,
+#main #pills-companies .members-inner .paymentHistory-inner-content table tbody td nav a,
+#main #pills-companies .members-inner .members-inner-content table tbody td nav a {
+    background-color: transparent;
+    max-width: 30px;
+    width: 100%;
+    height: 30px;
+    margin: 0 3px;
+    border: 1px solid #8c9196;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#main #pills-companies .users-inner .users-inner-content table tbody td nav a.nav-link-detail,
+#main #pills-companies .users-inner .paymentHistory-inner-content table tbody td nav a.nav-link-detail,
+#main #pills-companies .users-inner .members-inner-content table tbody td nav a.nav-link-detail,
+#main #pills-companies .paymentHistory-inner .users-inner-content table tbody td nav a.nav-link-detail,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table tbody td nav a.nav-link-detail,
+#main #pills-companies .paymentHistory-inner .members-inner-content table tbody td nav a.nav-link-detail,
+#main #pills-companies .members-inner .users-inner-content table tbody td nav a.nav-link-detail,
+#main #pills-companies .members-inner .paymentHistory-inner-content table tbody td nav a.nav-link-detail,
+#main #pills-companies .members-inner .members-inner-content table tbody td nav a.nav-link-detail {
+    max-width: 120px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #202223;
+    font-weight: 500;
+}
+
+#main #pills-companies .users-inner .users-inner-content table tbody td,
+#main #pills-companies .users-inner .paymentHistory-inner-content table tbody td,
+#main #pills-companies .users-inner .members-inner-content table tbody td,
+#main #pills-companies .paymentHistory-inner .users-inner-content table tbody td,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table tbody td,
+#main #pills-companies .paymentHistory-inner .members-inner-content table tbody td,
+#main #pills-companies .members-inner .users-inner-content table tbody td,
+#main #pills-companies .members-inner .paymentHistory-inner-content table tbody td,
+#main #pills-companies .members-inner .members-inner-content table tbody td {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .users-inner .users-inner-content table tbody td.name,
+#main #pills-companies .users-inner .paymentHistory-inner-content table tbody td.name,
+#main #pills-companies .users-inner .members-inner-content table tbody td.name,
+#main #pills-companies .paymentHistory-inner .users-inner-content table tbody td.name,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table tbody td.name,
+#main #pills-companies .paymentHistory-inner .members-inner-content table tbody td.name,
+#main #pills-companies .members-inner .users-inner-content table tbody td.name,
+#main #pills-companies .members-inner .paymentHistory-inner-content table tbody td.name,
+#main #pills-companies .members-inner .members-inner-content table tbody td.name {
+    color: #055fc6;
+    font-weight: 500;
+}
+
+#main #pills-companies .users-inner .users-inner-content table tbody td.level,
+#main #pills-companies .users-inner .paymentHistory-inner-content table tbody td.level,
+#main #pills-companies .users-inner .members-inner-content table tbody td.level,
+#main #pills-companies .paymentHistory-inner .users-inner-content table tbody td.level,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table tbody td.level,
+#main #pills-companies .paymentHistory-inner .members-inner-content table tbody td.level,
+#main #pills-companies .members-inner .users-inner-content table tbody td.level,
+#main #pills-companies .members-inner .paymentHistory-inner-content table tbody td.level,
+#main #pills-companies .members-inner .members-inner-content table tbody td.level {
+    color: #055fc6;
+    font-weight: 500;
+}
+
+#main #pills-companies .members-inner .members-inner-content table td,
+#main #pills-companies .members-inner .members-inner-content table th {
+    vertical-align: middle;
+}
+
+#main #pills-companies .members-inner .members-inner-content table td .form-check,
+#main #pills-companies .members-inner .members-inner-content table th .form-check {
+    margin-bottom: 20px;
+}
+
+#main #pills-companies .members-inner .members-inner-content table tbody tr td {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .members-inner .members-inner-content table tbody tr td.member-name .member-detail h6 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202223;
+    color: #202223;
+}
+
+#main #pills-companies .members-inner .members-inner-content table tbody tr td.member-name .member-detail p {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .members-inner .members-inner-content table tbody tr td.pending {
+    color: #f79042;
+}
+
+#main #pills-companies .payments-inner {
+    border: 0.5px solid #939393;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#main #pills-companies .payments-inner .payment-id {
+    width: 100%;
+    background: #036fdf;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0 20px;
+}
+
+#main #pills-companies .payments-inner .payment-id p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+#main #pills-companies .payments-inner .payments-inner-content .row p {
+    margin: 0;
+}
+
+#main #pills-companies .payments-inner .payments-inner-content .row p span {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 5px;
+}
+
+#main #pills-companies .payments-inner .payments-inner-content .row p span.main-heading {
+    font-style: normal;
+    font-weight: bold;
+}
+
+#main #pills-companies .payments-inner .payments-inner-content .row p span.sub-heading {
+    font-weight: normal;
+}
+
+#main #pills-companies .payments-inner .payments-inner-content .row p span.sub-heading.green {
+    color: #18d26e;
+    font-weight: 700;
+}
+
+#main #pills-companies .payments-inner .payments-inner-content .row p span.attachment {
+    text-decoration: underline;
+    color: #18d26e;
+}
+
+#main #pills-companies .loanSteps-inner {
+    border: 0.5px solid #939393;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-header {
+    padding: 0.7rem 1.25rem;
+    background-color: #f2f2f2, 100%;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-header h5 button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 11px;
+    letter-spacing: 0.291667px;
+    color: #055fc6;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-header h5 button:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-header.showed span {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-body .circle {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: 1px solid #055fc6;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-body .circle .submitted,
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-body .circle .processing,
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-body .circle .approved {
+    width: 18px;
+    height: 18px;
+    background: #ffc840;
+    border-radius: 50%;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-body h2 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 11px;
+    letter-spacing: 0.291667px;
+    color: #001b27;
+    margin-left: 13px;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-body p {
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 11px;
+    letter-spacing: 0.291667px;
+    color: #001b27;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-body .row .col-md-6 {
+    height: 80px;
+    position: relative;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-body .row .col-md-6::after {
+    height: 70%;
+    width: 1px;
+    background-color: #055fc6;
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 26px;
+}
+
+#main #pills-companies .loanSteps-inner .loanSteps-inner-content .card .card-body .row:last-child .col-md-6::after {
+    height: 0px;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table td,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table th {
+    vertical-align: middle;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table td .form-check,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table th .form-check {
+    margin-bottom: 18px;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table tbody tr td {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table tbody tr td.id {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table tbody tr td.due {
+    color: #ff1111;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content table tbody tr td.paid {
+    color: #36b45d;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .progress-status {
+    padding: 20px 0;
+    border-top: 1px solid #e1e3e5;
+    border-bottom: 1px solid #e1e3e5;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .progress-status h6 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 11px;
+    letter-spacing: 0.291667px;
+    color: #055fc6;
+    margin-bottom: 17px;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .progress-status p {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #66738b;
+    margin-bottom: 0;
+    margin-top: 18px;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .progress-status .btn {
+    max-width: 120px;
+    width: 100%;
+    height: 40px;
+    background: #055fc6;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid #055fc6;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .progress-status .btn:hover {
+    background-color: #fff;
+    color: #055fc6;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .progress-status .progress-text .progress {
+    background: #ccd0da;
+    width: 100%;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .progress-status .progress-text .progress .progress-bar {
+    background-color: #334560;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .progress-status .progress-text .progress-width {
+    margin-left: 10px;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters > div {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media (max-width: 1100px) {
+    #main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters > div {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .task-actions,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter {
+    margin-bottom: 20px;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .task-actions .btn-secondary,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter .btn-secondary {
+    max-width: 121px;
+    width: 100%;
+    border: 1px solid #babfc3;
+    border-radius: 4px;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #202223;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .task-actions .btn-secondary:focus,
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter .btn-secondary:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter .btn-secondary {
+    border: none;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter .btn-secondary span {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: #6a707e;
+}
+
+@media (max-width: 1100px) {
+    #main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter .btn-secondary {
+        padding-left: 0px;
+    }
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter .input-group {
+    max-width: 223px;
+    width: 100%;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter .input-group .input-group-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: #6a707e;
+    background: none;
+    border-right: 0px;
+    padding-right: 0px;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter .input-group .custom-select {
+    border-left: 0px;
+}
+
+#main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter .input-group .custom-select:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+@media (max-width: 1100px) {
+    #main #pills-companies .paymentHistory-inner .paymentHistory-inner-content .table-filters .weeks-filter {
+        -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+        justify-content: flex-start !important;
+    }
+}
+
+#main #pills-companies .documents-inner {
+    border: 0.5px solid #939393;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#main #pills-companies .documents-inner .documents-inner-content .card .card-header {
+    padding: 0.7rem 1.25rem;
+    background: #ccd0da;
+}
+
+#main #pills-companies .documents-inner .documents-inner-content .card .card-header h2 {
+    font-size: 14px;
+    line-height: 20px;
+    color: #202223;
+}
+
+#main #pills-companies .documents-inner .documents-inner-content .card .card-body .row {
+    background: #f6f6f7;
+    min-height: 50px;
+    padding-left: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#main #pills-companies .documents-inner .documents-inner-content .card .card-body .row:last-child {
+    border-bottom: none;
+}
+
+#main #pills-companies .documents-inner .documents-inner-content .card .card-body .row .document h6,
+#main #pills-companies .documents-inner .documents-inner-content .card .card-body .row .document p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #202223;
+    font-weight: normal;
+}
+
+#main #pills-companies .documents-inner .documents-inner-content .card .card-body .row .document p {
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+    color: #006a68;
+}
+
+#main #pills-companies .documents-inner .documents-inner-content .card .card-body .row span.date {
+    font-size: 14px;
+    line-height: 20px;
+    color: #202223;
+    font-weight: normal;
+}
+
+/*--------------------------------------------------------------
+# Responsiveness
+--------------------------------------------------------------*/
+@media (max-width: 992px) {
+    #header .logo {
+        font-size: 28px;
+    }
+
+    #hero .container,
+    #login-hero .container {
+        padding-top: 0;
+    }
+
+    #login-hero > div form {
+        max-width: 600px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .nav-menu .drop-down .drop-down ul {
+        left: -90%;
+    }
+
+    .nav-menu .drop-down .drop-down:hover > ul {
+        left: -100%;
+    }
+
+    .nav-menu .drop-down .drop-down > a:after {
+        content: "\ea9d";
+    }
+}
+
+@media (min-width: 1024px) {
+    #hero,
+    #login-hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero,
+    #login-hero {
+        height: 100vh;
+    }
+
+    #hero h1,
+    #login-hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    #hero h2,
+    #login-hero h2 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .breadcrumbs .d-flex {
+        display: block !important;
+    }
+
+    .breadcrumbs ol {
+        display: block;
+    }
+
+    .breadcrumbs ol li {
+        display: inline-block;
+    }
+
+    .clients img {
+        max-width: 40%;
+    }
+
+    #login-hero {
+        height: auto;
+    }
+
+    #login-hero.login-page {
+        height: 100vh;
+    }
+
+    #login-hero > div {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        background-color: #001733;
+    }
+
+    #login-hero > div form .google-sing-login {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    #login-hero > div form .google-sing-login .btn {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        background-color: #fff;
+    }
+
+    #login-hero > div form .google-sing-login .btn img {
+        height: 80%;
+        width: 80%;
+    }
+
+    #login-hero > div form h3 {
+        display: none;
+    }
+
+    #login-hero > div form .form-group .text-muted {
+        color: #66738b !important;
+    }
+
+    #login-hero > div form .form-group label {
+        color: #99a2b4;
+    }
+
+    #login-hero > div form .form-group .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: #334560;
+    }
+
+    #login-hero > div form .or .border {
+        background-color: #979797;
+    }
+
+    #login-hero > div form .or span {
+        color: #aab2bd;
+    }
+
+    #login-hero > div form p {
+        color: #ccdbf9;
+    }
+
+    .section-title h2,
+    .section-title a {
+        color: #055fc6;
+    }
+
+    .services .icon-box h4 a {
+        color: #055fc6;
+    }
+
+    .loan .loan-calculator .section-title h2 {
+        color: #055fc6;
+    }
+
+    .loan .loan-calculator .section-title::after {
+        background-color: #055fc6;
+    }
+
+    .loan .loan-calculator p {
+        color: #66738b;
+    }
+
+    .loan .loan-calculator .disclaimer h6 {
+        color: #055fc6;
+    }
+
+    .loan .loan-calculator form .form-control::-webkit-input-placeholder {
+        letter-spacing: 0.4px;
+        color: #b0b0c3;
+    }
+
+    .loan .loan-calculator form .form-control:-ms-input-placeholder {
+        letter-spacing: 0.4px;
+        color: #b0b0c3;
+    }
+
+    .loan .loan-calculator form .form-control::-ms-input-placeholder {
+        letter-spacing: 0.4px;
+        color: #b0b0c3;
+    }
+
+    .loan .loan-calculator form .form-control::placeholder {
+        letter-spacing: 0.4px;
+        color: #b0b0c3;
+    }
+
+    .loan .loan-calculator form .form-group label p {
+        color: #055fc6;
+    }
+
+    .loan .loan-calculator form .form-btns .btn {
+        border: 1px solid #055fc6;
+    }
+
+    .loan .loan-calculator form .form-btns .btn.reset {
+        color: #055fc6;
+    }
+
+    .loan .loan-calculator form .form-btns .btn.reset:hover {
+        background-color: #055fc6;
+    }
+
+    .loan .loan-calculator form .form-btns .btn.calculate {
+        background-color: #055fc6;
+    }
+
+    .loan .loan-calculator form .form-btns .btn.calculate:hover {
+        color: #055fc6;
+    }
+}
+
+@media (max-width: 500px) {
+    .services .icon-box {
+        background: none;
+        border-top: 1px solid #ccd0da;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .services .icon-box h4 {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .services .icon-box p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .services .icon-box:last-child {
+        border-bottom: 1px solid #ccd0da;
+    }
+
+    .services .icon-box .icon {
+        width: 80px;
+        height: 80px;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(80px);
+        flex: 0 0 calc(80px);
+        padding: 15px;
+    }
+
+    .section-title h2,
+    .section-title a {
+        font-size: 20px;
+    }
+
+    .section-title a {
+        font-size: 18px;
+    }
+
+    footer .footer-box h3 {
+        font-size: 20px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Sidenav
+--------------------------------------------------------------*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background: #055fc6;
+    border-radius: 4px;
+    z-index: 100;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sidebar .logo-img {
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #001733;
+}
+
+.sidebar .logo-details {
+    height: 60px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.sidebar .logo-details i {
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .logo-details .logo_name {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.sidebar .nav-links {
+    height: 100%;
+    padding: 30px 0 150px 0;
+    padding-top: 0;
+    overflow: auto;
+}
+
+.sidebar .nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .nav-links li {
+    position: relative;
+    list-style: none;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li:hover, .sidebar .nav-links li.active {
+    background: rgba(2, 19, 80, 0.3);
+    border-left: 4px solid #001733;
+}
+
+.sidebar .nav-links li .icon-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.sidebar .nav-links li span {
+    height: 50px;
+    min-width: 60px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar .nav-links li a .link_name {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li .sub-menu {
+
+    margin-top: 0px;
+    background: #055fc6;
+    display: none;
+}
+
+.sidebar .nav-links li .sub-menu a {
+    color: #fff;
+    font-size: 15px;
+    padding: 5px;
+    padding: 10px 15px;
+    white-space: nowrap;
+    opacity: 0.6;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover {
+    opacity: 1;
+}
+
+.sidebar .nav-links li .sub-menu .link_name {
+    display: none;
+}
+
+.sidebar .nav-links li .sub-menu.blank {
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li.showMenu span.arrow {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.sidebar .nav-links li.showMenu .sub-menu {
+    display: block;
+}
+
+.sidebar.menu-close {
+    width: 0px;
+    opacity: 1;
+}
+
+.sidebar.menu-close .logo-details i {
+    display: none;
+}
+
+.sidebar.menu-close .logo-details .logo_name {
+    display: none;
+}
+
+/*# sourceMappingURL=main.css.map */
